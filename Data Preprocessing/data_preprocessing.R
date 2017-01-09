@@ -23,3 +23,20 @@ dataset$Purchased = factor(dataset$Purchased,
                            levels = c('Yes','No'),
                            labels = c(1,0))
 
+#splitting the datasets into train and test datasets
+
+#install package 
+#install.packages('caTools')
+
+#import library 
+library('caTools')
+#genrate a random number
+set.seed(123)
+#use sample.split from caTools to split 
+split  = sample.split(dataset$Purchased, SplitRatio = 0.8)
+
+#make the subsets using the split
+training_set = subset(dataset,split == TRUE)
+test_set = subset(dataset, split == FALSE)
+
+
