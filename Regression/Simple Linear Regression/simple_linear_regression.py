@@ -29,3 +29,5 @@ from sklearn.linear_model import LinearRegression
 regression = LinearRegression()
 regression.fit(X_train,y_train)
 
+#predicting the test set results 
+y_pred = regression.predict(X_test)
