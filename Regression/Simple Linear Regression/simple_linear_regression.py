@@ -31,3 +31,23 @@ regression.fit(X_train,y_train)
 
 #predicting the test set results 
 y_pred = regression.predict(X_test)
+
+#visualising the results by plotting graphs
+
+#scatter all the training data in red color
+plt.scatter(X_train, y_train, color = 'red')
+#plot the regression line for the training data
+plt.plot(X_train, regression.predict(X_train), color = 'blue')
+plt.title('Salary vs Experience')
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.show()
+
+#scatter all the test data in red color
+plt.scatter(X_test, y_test, color = 'red')
+#plot the regression line for the training data
+plt.plot(X_train, regression.predict(X_train), color = 'blue')
+plt.title('Salary vs Experience')
+plt.xlabel('Years of Experience')
+plt.ylabel('Predicted Salary')
+plt.show()
