@@ -7,3 +7,13 @@ dataset = dataset[2:3]
 
 #feature scaling is also not required
 
+#fitting linear regression model
+lin_reg = lm(formula = Salary ~ .,
+             data = dataset)
+
+#fitting polynomial regression model
+dataset$Level2 = dataset$Level^2
+dataset$Level3 = dataset$Level^3
+
+poly_reg = lm(formula = Salary ~ .,
+              data = dataset)
