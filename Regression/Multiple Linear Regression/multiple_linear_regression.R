@@ -21,3 +21,12 @@ summary(regressor)
 
 y_pred = predict(regressor, newdata = test_set)
 
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend + State , data = training_set)
+summary(regressor)
+
+regressor = lm(formula = Profit ~ R.D.Spend + Administration + Marketing.Spend , data = training_set)
+summary(regressor)
+
+regressor = lm(formula = Profit ~ R.D.Spend , data = training_set)
+summary(regressor)
+
