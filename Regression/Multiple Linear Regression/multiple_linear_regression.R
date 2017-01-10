@@ -15,3 +15,9 @@ test_set = subset(dataset, split == FALSE)
 
 #feature scaling is not required
 
+#multiple linear regression
+regressor = lm(formula = Profit ~ . , data = training_set)
+summary(regressor)
+
+y_pred = predict(regressor, newdata = test_set)
+
