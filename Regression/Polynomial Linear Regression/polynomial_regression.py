@@ -42,3 +42,10 @@ plt.title('Polynomial Regression')
 plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
+
+
+#predicting a new result with Linear Regression
+lin_reg.predict(6.5)
+
+#predicting the new result with Polynomail Linear Regression
+lin_reg2.predict(poly_reg.fit_transform(6.5))
