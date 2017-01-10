@@ -30,10 +30,16 @@ ggplot()+
   xlab('Level')+
   ylab('Salary')
 
+
+x_grid = seq(min(dataset$Level), max(dataset$Level), 0.1)
 ggplot()+
   geom_point(aes(x = dataset$Level, y = dataset$Salary),
              color = 'red')+
-  geom_line(aes(x = dataset$Level, y = predict(poly_reg, newdata = dataset)),
+  geom_line(aes(x = x_grid, y = predict(poly_reg,
+                                        newdata = data.frame(Level = x_grid,
+                                                             Level2 = x_grid^2,
+                                                             Level3 = x_grid^3,
+                                                             Level4 = x_grid^4))),
             color = 'blue')+
   ggtitle('Polynomial Regression')+
   xlab('Level')+
@@ -46,5 +52,5 @@ y_pred = predict(lin_reg, data.frame(Level = 6.5))
 y_pred = predict(poly_reg, data.frame(Level = 6.5,
                                       Level2 = 6.5^2,
                                       Level3 = 6.5^3,
-                                      Level4 = 6.4^4))
+                                      Level4 = 6.5^4))
 
