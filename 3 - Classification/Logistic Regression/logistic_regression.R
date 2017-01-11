@@ -12,3 +12,8 @@ test_set = subset(dataset,split == FALSE)
 #feature scaling of independant variables
 training_set[, 1:2] = scale(training_set[, 1:2])
 test_set[, 1:2] = scale(test_set[, 1:2])
+
+#fitting the classifier
+classifier = glm(formula = Purchased ~ .,
+                 family = 'binomial',
+                 data = training_set)
