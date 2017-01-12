@@ -8,3 +8,7 @@ plot(dendrogram,
      main = paste('Dendrogram'),
      xlab = 'Customers',
      ylab = 'Euclidean distances')
+
+#fitting hierarchial clustering using 5 clusters 
+hc = hclust(dist(X, method = 'euclidean'), method = 'ward.D')
+y_hc = cutree(hc, 5)
