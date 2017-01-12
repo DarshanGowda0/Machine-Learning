@@ -12,6 +12,7 @@ plot(1:10,wcss,type="b",main = 'elbow method',xlab = 'number of clusters',ylab =
 set.seed(29)
 kmeans = kmeans(X,5,iter.max = 300,nstart = 10)
 
+#visualisation of clusters in hierarchial clustering
 # install.packages('cluster')
 library(cluster)
 clusplot(X,
