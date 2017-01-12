@@ -17,4 +17,7 @@ plt.ylabel('Euclidian Distance')
 plt.show()
 
 #optimal number of clusters obtained is 5
+from sklearn.cluster import AgglomerativeClustering
+hc = AgglomerativeClustering(n_clusters = 5, affinity = 'euclidean', linkage = 'ward')
+y_hc = hc.fit_predict(X)
 
