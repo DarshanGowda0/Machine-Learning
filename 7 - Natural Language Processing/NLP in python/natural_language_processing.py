@@ -2,14 +2,12 @@
 
 # importing the libraries
 import pandas as pd
-import matplotlib.pyplot as plt
 
 # importing the dataset, set the delimiter as tab for tsv, quoting to 3 to maintain the quotes
 dataset = pd.read_csv('Restaurant_Reviews.tsv', delimiter = '\t', quoting = 3)
 
 # cleaning the texts 
 import re
-import nltk
 from nltk.stem.porter import PorterStemmer
 # nltk.download('stopwords')
 from nltk.corpus import stopwords
@@ -23,5 +21,8 @@ for i in range(0, 1000):
     review = ' '.join(review)
     corpus.append(review)
     
-    
-    
+#creating bag of words 
+from sklearn.feature_extraction.text import CountVectorizer
+cv = CountVectorizer(max_features = 1500)
+X = cv.fit_transform(corpus).toarray()
+y = dataset.iloc[:, 1].values
