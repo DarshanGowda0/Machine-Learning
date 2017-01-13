@@ -13,7 +13,15 @@ import nltk
 from nltk.stem.porter import PorterStemmer
 # nltk.download('stopwords')
 from nltk.corpus import stopwords
-# review = review.lower().split()
-review = re.sub('[^a-zA-Z]',' ',dataset['Review'][0]).lower().split()
-ps = PorterStemmer()
-review = [ps.stem(word) for word in review if not word in set(stopwords.words('english'))]
+corpus = []
+
+for i in range(0, 1000):
+    # review = review.lower().split()
+    review = re.sub('[^a-zA-Z]',' ',dataset['Review'][i]).lower().split()
+    ps = PorterStemmer()
+    review = [ps.stem(word) for word in review if not word in set(stopwords.words('english'))]
+    review = ' '.join(review)
+    corpus.append(review)
+    
+    
+    
